@@ -3,42 +3,77 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Form 2 Science Chapter 8 — Force and Motion</title>
+<title>Form 2 Science Hub</title>
 <style>
-:root{--purple:#5f2d91;--purple2:#8d5ab6;--ink:#27222d;--soft:#f6f0fa;--line:#dbcde7;--white:#fff;--shadow:0 18px 48px rgba(48,27,62,.16)}
+:root{--ink:#20242b;--muted:#68717d;--line:#dce3eb;--card:#fff;--bg:#f5f7fa;--accent:#315b7c;--accent2:#4d7797;--soft:#eaf1f6;--shadow:0 14px 36px rgba(31,45,61,.10)}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(135deg,#efe7f5,#fbf4e8 55%,#eaf4f8);min-height:100vh}
-header{padding:56px 18px 34px;text-align:center;background:linear-gradient(135deg,#55227f,#7b42a3);color:#fff}
-header h1{margin:0;font-size:clamp(31px,6vw,58px)}
-header p{margin:12px auto 0;max-width:760px;font-size:clamp(16px,2vw,20px);line-height:1.6}
-main{max-width:1120px;margin:auto;padding:30px 18px 60px}
-.notice{background:#fff;border-left:7px solid #f1c84a;border-radius:15px;padding:15px 18px;box-shadow:var(--shadow);margin-bottom:24px;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
-.card{display:flex;flex-direction:column;background:#fff;border:2px solid var(--line);border-radius:20px;padding:21px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:.22s ease;min-height:245px}
-.card:hover{transform:translateY(-5px);border-color:var(--purple2)}
-.number{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:var(--purple);color:#fff;font-size:20px;font-weight:900}
-.card h2{color:var(--purple);margin:15px 0 7px;font-size:23px}
-.card p{line-height:1.55;margin:0 0 15px;color:#605768}
-.open{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;background:var(--purple);color:#fff;font-weight:900}
-footer{text-align:center;color:#6b6270;padding:0 18px 35px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#eef4f8 0,#f8fafc 40%,#f5f7fa 100%);min-height:100vh}
+.hero{padding:58px 20px 42px;text-align:center;background:linear-gradient(135deg,#213c50,#315b7c 58%,#477a98);color:#fff}
+.hero .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;opacity:.8}
+.hero h1{margin:10px 0 8px;font-size:clamp(34px,6vw,62px);line-height:1.05}
+.hero p{margin:0 auto;max-width:760px;font-size:clamp(16px,2vw,20px);line-height:1.65;opacity:.96}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px 64px}
+.status{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 26px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:800;color:#4c5967;box-shadow:0 4px 14px rgba(31,45,61,.05)}
+.theme{margin:32px 0 14px}
+.theme h2{margin:0;font-size:21px;color:#294d68}
+.theme p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{position:relative;display:flex;flex-direction:column;min-height:190px;padding:20px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:.2s ease;overflow:hidden}
+.card.ready:hover{transform:translateY(-4px);border-color:#91adc1;box-shadow:0 18px 44px rgba(31,45,61,.15)}
+.card::after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;right:-32px;top:-32px;background:var(--soft)}
+.chap{position:relative;z-index:1;font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
+.card h3{position:relative;z-index:1;margin:11px 0 5px;font-size:21px;line-height:1.2}
+.cn{position:relative;z-index:1;color:#5f6873;font-size:15px;margin-bottom:14px}
+.badge{position:relative;z-index:1;margin-top:auto;align-self:flex-start;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:900;background:#eef2f5;color:#69727c}
+.ready .badge{background:#dfeef7;color:#245777}
+.ready h3{color:#244f6b}
+footer{text-align:center;padding:0 20px 36px;color:#7a838d;font-size:13px}
+@media(max-width:520px){.hero{padding-top:44px}.wrap{padding-left:14px;padding-right:14px}.grid{grid-template-columns:1fr}.card{min-height:164px}}
 </style>
 </head>
 <body>
-<header>
-<h1>Form 2 Science Chapter 8</h1>
-<p>Force and Motion — Bilingual Interactive Animated Lessons<br>力与运动：英文＋华语互动动画教学</p>
-</header>
-<main>
-<div class="notice"><b>Learning path 学习顺序：</b> Start from Lesson 1 and continue in sequence. Each lesson opens the original HTML file without changing its content.<br>从第1课开始依序学习。每个入口直接打开原本的HTML，原有内容没有被修改。</div>
+<section class="hero">
+<div class="eyebrow">Form 2 Science</div>
+<h1>Science Learning Hub</h1>
+<p>Complete chapter-based learning centre for Form 2 Science.<br>中二科学单元学习中心</p>
+</section>
+<main class="wrap">
+<div class="status">
+<div class="pill">13 Chapters</div>
+<div class="pill">Bilingual Learning</div>
+<div class="pill">Interactive Lessons</div>
+</div>
+
+<section class="theme"><h2>Theme 1 · Maintenance and Continuity of Life</h2><p>生命的维持与延续</p></section>
 <div class="grid">
-<a class="card" href="lever_bilingual_full_animated_examples.html"><div class="number">1</div><h2>Lever 杠杆</h2><p>Parts of a lever, purposes, three classes of levers, examples, animations and pronunciation.</p><span class="open">Open Lesson 进入课程</span></a>
-<a class="card" href="moment_of_force_bilingual_animated_lesson.html"><div class="number">2</div><h2>The Moment of Force 力矩</h2><p>Turning effect, perpendicular distance, calculations, principle of moments and animated examples.</p><span class="open">Open Lesson 进入课程</span></a>
-<a class="card" href="pressure_step_by_step_bilingual_animated_lesson.html"><div class="number">3</div><h2>Pressure 压强</h2><p>Force, surface area, pressure formula, experiment and applications in daily life.</p><span class="open">Open Lesson 进入课程</span></a>
-<a class="card" href="gas_pressure_step_by_step_interactive_lesson.html"><div class="number">4</div><h2>Gas Pressure 气体压强</h2><p>Particle collisions, balloon, atmospheric pressure, volume and temperature simulations.</p><span class="open">Open Lesson 进入课程</span></a>
-<a class="card" href="air_pressure_complete_detailed_bilingual_animated_lesson_with_pronunciation.html"><div class="number">5</div><h2>Air Pressure 气压</h2><p>Factors affecting air pressure and complete daily-life applications with pronunciation.</p><span class="open">Open Lesson 进入课程</span></a>
-<a class="card" href="altitude_liquid_pressure_complete_bilingual_animated_lesson.html"><div class="number">6</div><h2>Altitude & Liquid Pressure 海拔与液体压强</h2><p>Altitude, atmospheric pressure, depth, liquid pressure, applications and formative practice.</p><span class="open">Open Lesson 进入课程</span></a>
+<div class="card"><div class="chap">Chapter 1</div><h3>Biodiversity</h3><div class="cn">生物多样性</div><span class="badge">Coming Soon</span></div>
+<div class="card"><div class="chap">Chapter 2</div><h3>Ecosystem</h3><div class="cn">生态系统</div><span class="badge">Coming Soon</span></div>
+<div class="card"><div class="chap">Chapter 3</div><h3>Nutrition</h3><div class="cn">营养</div><span class="badge">Coming Soon</span></div>
+<div class="card"><div class="chap">Chapter 4</div><h3>Human Health</h3><div class="cn">人类健康</div><span class="badge">Coming Soon</span></div>
+</div>
+
+<section class="theme"><h2>Theme 2 · Exploration of Elements in Nature</h2><p>自然界元素的探索</p></section>
+<div class="grid">
+<div class="card"><div class="chap">Chapter 5</div><h3>Water and Solution</h3><div class="cn">水与溶液</div><span class="badge">Coming Soon</span></div>
+<div class="card"><div class="chap">Chapter 6</div><h3>Acids and Alkalis</h3><div class="cn">酸与碱</div><span class="badge">Coming Soon</span></div>
+</div>
+
+<section class="theme"><h2>Theme 3 · Energy and Sustainability of Life</h2><p>能量与生命的可持续性</p></section>
+<div class="grid">
+<div class="card"><div class="chap">Chapter 7</div><h3>Electricity and Magnetism</h3><div class="cn">电与磁</div><span class="badge">Coming Soon</span></div>
+<a class="card ready" href="chapter8.html"><div class="chap">Chapter 8</div><h3>Force and Motion</h3><div class="cn">力与运动</div><span class="badge">Open Chapter · 进入单元</span></a>
+<div class="card"><div class="chap">Chapter 9</div><h3>Heat</h3><div class="cn">热</div><span class="badge">Coming Soon</span></div>
+<div class="card"><div class="chap">Chapter 10</div><h3>Sound Waves</h3><div class="cn">声波</div><span class="badge">Coming Soon</span></div>
+</div>
+
+<section class="theme"><h2>Theme 4 · Earth and Space Exploration</h2><p>地球与太空探索</p></section>
+<div class="grid">
+<div class="card"><div class="chap">Chapter 11</div><h3>Stars and Galaxies in the Universe</h3><div class="cn">宇宙中的恒星与星系</div><span class="badge">Coming Soon</span></div>
+<div class="card"><div class="chap">Chapter 12</div><h3>Solar System</h3><div class="cn">太阳系</div><span class="badge">Coming Soon</span></div>
+<div class="card"><div class="chap">Chapter 13</div><h3>Meteoroid, Asteroid, Comet</h3><div class="cn">流星体、小行星与彗星</div><span class="badge">Coming Soon</span></div>
 </div>
 </main>
-<footer>Form 2 Science · Chapter 8 · Force and Motion</footer>
+<footer>Form 2 Science Learning Hub</footer>
 </body>
 </html>
